@@ -1,25 +1,27 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import WeaponsDetails from "./WeaponsDetails";
+import HomeDetails from "./HomeDetails";
 import HomeCard from "../components/HomeCard";
 
-const Home = () => {
-  const [agentsData, setAgentsData] = useState([]);
+const Weapons = () => {
+  const [weaponsData, setWeaponsData] = useState([]);
   const [search, setSearch] = useState("");
+  console.log(weaponsData)
 
-  console.log(agentsData);
-
-  const getAgentsData = async () => {
+  const getWeaponsData = async () => {
     try {
       const { data } = await axios(
-        `https://valorant-api.com/v1/agents?language=tr-TR&isPlayableCharacter=true`
+        `https://valorant-api.com/v1/weapons?language=tr-TR`
       );
-      setAgentsData(data.data);
+      setWeaponsData(data.data);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
-    getAgentsData();
+    getWeaponsData();
   }, []);
 
   return (
@@ -69,7 +71,7 @@ const Home = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-center items-center gap-5 p-5">
-        {agentsData
+        {weaponsData
           .filter((item) =>
             item.displayName.toLowerCase().includes(search.trim().toLowerCase())
           )
@@ -81,4 +83,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Weapons;

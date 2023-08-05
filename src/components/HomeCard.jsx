@@ -1,13 +1,20 @@
 import { useNavigate } from "react-router-dom";
 
-const HomeCard = ({ uuid, displayName, displayIcon }) => {
+const HomeCard = ({ uuid, displayName, displayIcon, weaponStats }) => {
   const navigate = useNavigate();
+  const handleClick = () => {
+    if (weaponStats) {
+      navigate(`/weaponsdetails/${uuid}`);
+    } else {
+      navigate(`/details/${uuid}`);
+    }
+  };
   return (
     <div
-      className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center justify-between"
+      className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center gap-1 justify-between"
       key={uuid}
     >
-      <div className="w-[300px]">
+      <div className="flex justify-center items-center w-[300px] h-[300px] m-2 border rounded-t-lg">
         <img
           loading="lazy"
           className="rounded-t-lg w-full"
@@ -16,16 +23,15 @@ const HomeCard = ({ uuid, displayName, displayIcon }) => {
         />
       </div>
 
-      <div className="">
-        <h5 className="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
-          {displayName}
-        </h5>
-      </div>
+      <h5 className="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">
+        {displayName}
+      </h5>
+
       <div className="mb-2 flex align-baseline items-center justify-evenly w-full">
         <button
           href="#"
           className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={() => navigate(`/details/${uuid}`)}
+          onClick={handleClick}
         >
           Details
           <svg
