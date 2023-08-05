@@ -25,7 +25,7 @@ const Weapons = () => {
   }, []);
 
   return (
-    <div className=" min-h-screen bg-gray-100 flex flex-col ">
+    <div className=" min-h-screen flex flex-col ">
       <div className="w-full flex justify-center items-center mt-5 ">
         <div className="w-full sm:w-1/2 md:w-2/3 lg:w-1/3">
           <form>
@@ -56,7 +56,7 @@ const Weapons = () => {
               <input
                 type="search"
                 id="search"
-                className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Search"
                 onChange={(e) => setSearch(e.target.value)}
               />

@@ -7,6 +7,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  class: "dark",
+  // className: "dark",
   plugins: [require("flowbite/plugin")],
 };

@@ -23,7 +23,7 @@ const HomeDetails = () => {
 
   return (
     <div
-      className="min-h-screen grid place-items-center font-mono dark:bg-gray-700 bg-gray-100 text-center"
+      className="min-h-screen grid place-items-center p-10 dark:bg-gray-700 bg-gray-100 text-center"
       key={id}
     >
       <div className="bg-white rounded-md dark:bg-gray-800 shadow-lg">
@@ -32,10 +32,10 @@ const HomeDetails = () => {
             <img
               src={detailsData?.fullPortraitV2}
               alt="pic"
-              className="h-full w-80 rounded-md transform -translate-y-4 border-4 bg-white dark:border-gray-300 border-gray-500 shadow-lg"
+              className="h-full w-80  object-contain rounded-md transform -translate-y-4 border-4 bg-white dark:border-gray-300 border-gray-500 shadow-lg"
             />
           </div>
-          <div className="flex-col dark:text-gray-300">
+          <div className="flex-col md:p-4 dark:text-gray-300">
             <p className="pt-4 text-2xl font-bold">
               {detailsData?.displayName}
             </p>
@@ -56,10 +56,10 @@ const HomeDetails = () => {
         </div>
         <div className="w-full p-3 text-end">
           <Link
-            to="/"
-            className="uppercase bg-blue-700 text-white p-2 rounded-lg"
+            to={-1}
+            className="uppercase bg-blue-700 font-mono text-white p-2 rounded-lg"
           >
-            ◀ Home Sayfası
+            ◀ Önceki Sayfa
           </Link>
         </div>
       </div>

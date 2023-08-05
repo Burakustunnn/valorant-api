@@ -4,7 +4,7 @@ const HomeCard = ({ uuid, displayName, displayIcon, weaponStats }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     if (weaponStats) {
-      navigate(`/weaponsdetails/${uuid}`);
+      navigate(`/weaponsdetails/${uuid}`,{state:uuid});
     } else {
       navigate(`/details/${uuid}`);
     }
@@ -14,7 +14,7 @@ const HomeCard = ({ uuid, displayName, displayIcon, weaponStats }) => {
       className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col items-center gap-1 justify-between"
       key={uuid}
     >
-      <div className="flex justify-center items-center w-[300px] h-[300px] m-2 border rounded-t-lg">
+      <div className="flex justify-center items-center w-[300px] h-[300px] m-2 border dark:border-gray-500 rounded-t-lg">
         <img
           loading="lazy"
           className="rounded-t-lg w-full"
